@@ -6,6 +6,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import com.example.caclulatorwithtests.calculator.Calculator
 import com.example.caclulatorwithtests.databinding.ActivityMainBinding
+import com.example.caclulatorwithtests.utils.ConvertUtils
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         var secondNum: Int? = null
 
         binding.firstNum.addTextChangedListener {
-            firstNum = Integer.parseInt(it.toString())
+            firstNum = ConvertUtils.stringToInteger(it.toString())
         }
 
         binding.secondNum.addTextChangedListener {
-            secondNum = Integer.parseInt(it.toString())
+            secondNum = ConvertUtils.stringToInteger(it.toString())
         }
 
         binding.plusButton.setOnClickListener {
